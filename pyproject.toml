@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "pdf2md"
+version = "0.1.0"
+description = "A PDF to Markdown converter that provides structured output."
+authors = ["Your Name <youremail@example.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pdftotext = "^2.2.1"
+markdownify = "^0.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
