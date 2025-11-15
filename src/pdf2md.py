@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 import sys
 import argparse
-from converter import PDFConverter
+
+try:
+    # When running as installed package or via `python -m src.pdf2md`
+    from .converter import PDFConverter
+except ImportError:  # pragma: no cover
+    # When running `python src/pdf2md.py` or via root wrapper
+    from converter import PDFConverter
 
 def main():
     parser = argparse.ArgumentParser(description="Convert PDF files to Markdown format.")
@@ -19,4 +25,6 @@ def main():
         print(markdown_text)
 
 if __name__ == "__main__":
+    # Allow executing as `python src/pdf2md.py` from project root
+    # and also as an installed module.
     main()

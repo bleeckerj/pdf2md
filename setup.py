@@ -21,4 +21,9 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    entry_points={
+        "console_scripts": [
+            "pdf2md=src.pdf2md:main",
+        ],
+    },
 )
